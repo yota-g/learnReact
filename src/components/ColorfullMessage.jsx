@@ -24,3 +24,6 @@ const ColorfullMessage = (props) => {
 //このままだと決まったものしか表示されないのでpropsを使用して変更を加える。
 
 export default ColorfullMessage;
+//通常のexportだと分割代入になる。複数importできる。
+//export defaultはimportするときそれしかimportできない。
+//stateはコンポーネントが持っている状態で可変のものを持つことができる。そして再レンダリングされる。

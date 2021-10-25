@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ColorfullMessage from "./components/ColorfullMessage";
 
 const App = () => {
-  const onClickButton = () => alert();
+  const onClickCountUp = () => {
+    setNum(num + 1);
+    //setNumを実行する記載をする。setNumの内容を設定すればいい。
+  };
+  const [num, setNum] = useState(0);
+  //stateはuseStateで設定することができる。
+  //第一がstateとして変更する変数、２つ目はそれを変更するための関数を入れる。
+  //useStateの引数でデフォルトを設定することができる。
   // const contentStyle = {
   //   color: "blue",
   //   fontSize: "18px"
@@ -25,7 +32,8 @@ const App = () => {
       その名称　= の後に渡す内容を入れていくことができる。compoに対して、要素を渡すことで、compoにpropsを渡すことができる。*/}
       {/* <ColorfullMessage color="pink" message="元気です。"/> */}
       <ColorfullMessage color="pink">元気です。</ColorfullMessage>
-      <button onClick={onClickButton}>ボタン</button>
+      <button onClick={onClickCountUp}>カウントアップ!</button>
+      <p>{num}</p>
     </>
   );
 };
@@ -37,6 +45,3 @@ const App = () => {
 //propsは、コンポーネントに対して、渡す引数のようなもの。
 //動的にコンポーネントを使用できるようにできる。
 export default App;
-//通常のexportだと分割代入になる。複数importできる。
-//export defaultはimportするときそれしかimportできない。
-//
